@@ -1,0 +1,18 @@
+$TTL    86400
+$ORIGIN local.dev.
+@  1D  IN  SOA ns1.local.dev. hostmaster.local.dev. (
+                              2002022406 ; serial
+                              3H ; refresh
+                              15 ; retry
+                              1w ; expire
+                              3h ; nxdomain ttl
+                             )
+       IN  NS     ns1.local.dev. ; in the domain
+@      IN  MX  10 mail.local.dev. ; external mail provider
+ns1    IN  A      192.168.0.1
+www    IN  A      192.168.0.2
+admin  IN  A      192.168.0.3
+test   IN  A      192.168.0.4
+sest   IN  A      192.168.0.7
+fest   IN  A      192.168.0.5
+demo   IN  CNAME  www

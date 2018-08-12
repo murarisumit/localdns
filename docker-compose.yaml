@@ -1,0 +1,20 @@
+version: '3.2'
+services:
+  coredns:
+    image: "coredns/coredns:1.2.0"
+    ports:
+    - target: 2053
+      published: 2053
+      protocol: udp
+      mode: host
+    - target: 2053
+      published: 2053
+      protocol: tcp
+      mode: host
+
+    volumes:
+    - ./dns:/opt/coredns
+    entrypoint:
+    - /coredns
+    - -conf
+    - /opt/coredns/Corefile

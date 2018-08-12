@@ -1,0 +1,8 @@
+.:2053 {
+  proxy . 8.8.8.8:53
+  file /opt/coredns/zones/db.local.dev local.dev
+  errors stdout
+  log stdout
+  whoami
+  debug
+}
