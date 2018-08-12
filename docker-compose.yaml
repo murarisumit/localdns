@@ -1,7 +1,11 @@
-version: '3.2'
+version: '3.5'
 services:
   coredns:
     image: "coredns/coredns:1.2.0"
+    labels:
+      dev.local.description: "localdns"
+    volumes:
+    - ./dns:/opt/coredns
     ports:
     - target: 2053
       published: 2053
@@ -11,9 +15,6 @@ services:
       published: 2053
       protocol: tcp
       mode: host
-
-    volumes:
-    - ./dns:/opt/coredns
     entrypoint:
     - /coredns
     - -conf
